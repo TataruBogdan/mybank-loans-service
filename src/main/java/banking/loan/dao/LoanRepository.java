@@ -1,6 +1,6 @@
-package bank.loan.dao;
+package banking.loan.dao;
 
-import bank.loan.model.AccountLoan;
+import banking.loan.model.AccountLoan;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

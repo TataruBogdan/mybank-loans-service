@@ -1,4 +1,4 @@
-package bank.loan.model;
+package banking.loan.model;
 
 public enum LoanStatus {
 

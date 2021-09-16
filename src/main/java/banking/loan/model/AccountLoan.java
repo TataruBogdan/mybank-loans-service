@@ -1,10 +1,9 @@
-package bank.loan.model;
+package banking.loan.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.Period;
 import java.util.Date;
 
@@ -12,7 +11,8 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name = "account_loan")
-public class AccountLoan implements Serializable {
+//de unde a aparut - implements Serializable - am sters
+public class AccountLoan {
 
     @Id
     @Column(name = "iban")

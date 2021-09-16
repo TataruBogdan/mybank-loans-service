@@ -87,6 +87,12 @@
 			<version>2.6.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.mybank</groupId>
+			<artifactId>mybank-commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
     </dependencies>
 
 
