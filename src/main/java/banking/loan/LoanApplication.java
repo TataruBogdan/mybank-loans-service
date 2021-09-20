@@ -3,7 +3,7 @@ package banking.loan;
 
 import banking.loan.dao.LoanRepository;
 import banking.loan.model.AccountLoan;
-import banking.loan.model.LoanStatus;
+import banking.commons.loan.model.LoanStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
