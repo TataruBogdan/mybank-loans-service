@@ -1,18 +1,18 @@
 package banking.loan.model;
 
-import banking.commons.loan.model.LoanStatus;
+
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.Period;
 import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Data
 @Table(name = "account_loan")
-//de unde a aparut - implements Serializable - am sters
 public class AccountLoan {
 
     @Id
@@ -24,7 +24,7 @@ public class AccountLoan {
 
 //    @Enumerated(EnumType.STRING)
     @Column(name = "period", nullable = false)
-    private Period period;
+    private String period;
 
     private double interestRate;
     private String interestReturn;
