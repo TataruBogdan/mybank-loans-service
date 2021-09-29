@@ -32,7 +32,8 @@ public class AccountLoanServiceImpl implements AccountLoanService {
     public List<AccountLoanDTO> getAll() {
 
         return loanRepository.findAll()
-                .stream().map(accountLoan -> accountLoanMapper.accountToDTO(accountLoan))
+                .stream()
+                .map(accountLoan -> accountLoanMapper.accountToDTO(accountLoan))
                 .collect(Collectors.toList());
     }
 
@@ -43,11 +44,11 @@ public class AccountLoanServiceImpl implements AccountLoanService {
     }
 
     @Override
-    public List<AccountLoanDTO> getByIndividualId(int individualId) {
-        List<AccountLoan> accountRepositoryByIndividual = loanRepository.findByIndividualId(individualId);
-        List<AccountLoanDTO> accountLoanDTO = accountLoanMapper.toAccountCurrentDTO(accountRepositoryByIndividual);
-
-        return accountLoanDTO;
+    public List<AccountLoanDTO> getAllByIndividualId(int individualId) {
+        return loanRepository.findByIndividualId(individualId)
+                .stream()
+                .map(accountLoan -> accountLoanMapper.accountToDTO(accountLoan))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -55,34 +56,24 @@ public class AccountLoanServiceImpl implements AccountLoanService {
         return null;
     }
 
-    @Override
-    public AccountLoanDTO creditBalanceAccount(String iban, Double balance) {
-        return null;
-    }
-
-    @Override
-    public AccountLoanDTO debitBalanceAccount(String iban, Double balance) {
-        return null;
-    }
 
 
-    @Override
-    public AccountLoanDTO createIndividualAccount(int individualId) {
+    public AccountLoanDTO createIndividualLoanAccount(int individualId, int period, int amount) {
 
         AccountLoan accountLoan = new AccountLoan();
 
         accountLoan.setIban(UUID.randomUUID().toString());
-        accountLoan.setLoanAmount(0.00);
+        accountLoan.setLoanAmount(amount);
         accountLoan.setIndividualId(individualId);
-        accountLoan.setPeriod("0"); // ??? period 1 year
-        accountLoan.setInterestRate(0.00);
-        accountLoan.setInterestReturn("0.01"); //? tratam ca un string
+        accountLoan.setPeriod(period);
+        accountLoan.setInterestRate(interestRate);
         accountLoan.setStartDate(new Date());
         accountLoan.setLoanStatus(ACTIVE);
-        accountLoan.setPrincipal(0.00);
+        accountLoan.setPrincipal(0.00); //TODO - CE ESTE Principal ??
 
-
-        return null;
+        AccountLoan savedAccountLoan = loanRepository.save(accountLoan);
+        AccountLoanDTO accountLoanDTO = accountLoanMapper.accountToDTO(savedAccountLoan);
+        return accountLoanDTO;
     }
 
     @Override

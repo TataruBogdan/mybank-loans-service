@@ -24,10 +24,10 @@ public class AccountLoan {
 
 //    @Enumerated(EnumType.STRING)
     @Column(name = "period", nullable = false)
-    private String period;
+    private int period;
 
     private double interestRate;
-    private String interestReturn;
+
     private Date startDate;
 
     @Enumerated(EnumType.STRING)

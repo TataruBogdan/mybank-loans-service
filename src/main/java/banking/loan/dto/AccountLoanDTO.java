@@ -15,9 +15,8 @@ public class AccountLoanDTO {
     private String iban;
     private double loanAmount;
     private int individualId;
-    private String period;
+    private int period;
     private double interestRate;
-    private String interestReturn;
     private Date startDate;
     private LoanStatus loanStatus;
     private double principal;

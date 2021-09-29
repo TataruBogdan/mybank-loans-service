@@ -7,14 +7,13 @@ import java.util.Optional;
 
 public interface AccountLoanService {
 
+    double interestRate = 6.00;
 
     List<AccountLoanDTO> getAll();
     Optional<AccountLoanDTO> getByIban(String iban);
-    List<AccountLoanDTO> getByIndividualId(int individualId);
+    List<AccountLoanDTO> getAllByIndividualId(int individualId);
     AccountLoanDTO updateBalanceAccount(String iban, Double balance);
-    AccountLoanDTO creditBalanceAccount(String iban, Double balance);
-    AccountLoanDTO debitBalanceAccount(String iban, Double balance);
-    AccountLoanDTO createIndividualAccount(int individualId);
+    AccountLoanDTO createIndividualLoanAccount(int individualId, int period, int amount);
     void deleteAccountByIban(String iban);
 
 
