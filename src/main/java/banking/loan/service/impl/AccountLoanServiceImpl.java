@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
+import static banking.loan.idGen.IdGenerator.idGen;
 import static banking.loan.model.LoanStatus.ACTIVE;
 
 @RequiredArgsConstructor
@@ -51,18 +51,13 @@ public class AccountLoanServiceImpl implements AccountLoanService {
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public AccountLoanDTO updateBalanceAccount(String iban, Double balance) {
-        return null;
-    }
-
 
 
     public AccountLoanDTO createIndividualLoanAccount(int individualId, int period, int amount) {
 
         AccountLoan accountLoan = new AccountLoan();
 
-        accountLoan.setIban(UUID.randomUUID().toString());
+        accountLoan.setIban(idGen("LOAN"));
         accountLoan.setLoanAmount(amount);
         accountLoan.setIndividualId(individualId);
         accountLoan.setPeriod(period);
@@ -75,6 +70,16 @@ public class AccountLoanServiceImpl implements AccountLoanService {
         AccountLoanDTO accountLoanDTO = accountLoanMapper.accountToDTO(savedAccountLoan);
         return accountLoanDTO;
     }
+
+//    @Override
+//    public AccountLoanDTO creditAccountLoan(String iban, Double amount) {
+//        AccountLoan accountLoanById = loanRepository.getById(iban);
+//        accountLoanById.setLoanAmount(amount);
+//        AccountLoan savedAccountLoan = loanRepository.save(accountLoanById);
+//
+//        AccountLoanDTO accountLoanDTO = accountLoanMapper.accountToDTO(savedAccountLoan);
+//        return accountLoanDTO;
+//    }
 
     @Override
     public void deleteAccountByIban(String iban) {

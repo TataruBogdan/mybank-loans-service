@@ -93,6 +93,22 @@ public class AccountLoanController {
 
     }
 
+//    @PatchMapping("credit/{iban}")
+//    public  ResponseEntity<AccountLoanDTO> creditAccountLoanIban(@PathVariable("iban") String iban, @RequestBody CreditAmountLoanDTO amount){
+//
+//
+//        Optional<AccountLoanDTO> accountLoanByIban = accountLoanService.getByIban(iban);
+//
+//        IndividualDTO individualById = individualRestClient.getIndividualById(accountLoanByIban.get().getIndividualId());
+//
+//        AccountLoanDTO creditAccountLoanDTO = accountLoanService.creditAccountLoan(iban, amount.getAmount());
+//        creditAccountLoanDTO.setIndividualDTO(individualById);
+//
+//        return ResponseEntity.ok(creditAccountLoanDTO);
+//
+//
+//    }
+
 
 
 }

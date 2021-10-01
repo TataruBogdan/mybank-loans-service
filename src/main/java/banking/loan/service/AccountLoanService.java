@@ -12,8 +12,8 @@ public interface AccountLoanService {
     List<AccountLoanDTO> getAll();
     Optional<AccountLoanDTO> getByIban(String iban);
     List<AccountLoanDTO> getAllByIndividualId(int individualId);
-    AccountLoanDTO updateBalanceAccount(String iban, Double balance);
     AccountLoanDTO createIndividualLoanAccount(int individualId, int period, int amount);
+//    AccountLoanDTO creditAccountLoan(String iban, Double amount);
     void deleteAccountByIban(String iban);
 
 
