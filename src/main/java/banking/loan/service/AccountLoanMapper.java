@@ -1,7 +1,7 @@
 package banking.loan.service;
 
 
-import banking.loan.dto.AccountLoanDTO;
+import banking.commons.dto.AccountLoanDTO;
 import banking.loan.model.AccountLoan;
 import org.mapstruct.Mapper;
 

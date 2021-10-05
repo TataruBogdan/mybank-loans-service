@@ -1,6 +1,7 @@
 package banking.loan.model;
 
 
+import banking.commons.dto.types.LoanStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

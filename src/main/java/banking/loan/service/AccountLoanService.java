@@ -1,6 +1,6 @@
 package banking.loan.service;
 
-import banking.loan.dto.AccountLoanDTO;
+import banking.commons.dto.AccountLoanDTO;
 
 import java.util.List;
 import java.util.Optional;

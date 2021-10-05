@@ -2,7 +2,7 @@ package banking.loan.rest;
 
 
 import banking.commons.dto.IndividualDTO;
-import banking.loan.dto.AccountLoanDTO;
+import banking.commons.dto.AccountLoanDTO;
 import banking.loan.dto.ArgsDTO;
 import banking.loan.service.AccountLoanService;
 import org.springframework.beans.factory.annotation.Autowired;
