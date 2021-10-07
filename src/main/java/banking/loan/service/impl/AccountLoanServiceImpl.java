@@ -1,8 +1,8 @@
 package banking.loan.service.impl;
 
 
-import banking.loan.dao.LoanRepository;
 import banking.commons.dto.AccountLoanDTO;
+import banking.loan.dao.LoanRepository;
 import banking.loan.model.AccountLoan;
 import banking.loan.service.AccountLoanMapper;
 import banking.loan.service.AccountLoanService;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static banking.loan.idGen.IdGenerator.idGen;
+import static banking.commons.dto.idGen.IdGenerator.idGen;
 import static banking.commons.dto.types.LoanStatus.ACTIVE;
 
 @RequiredArgsConstructor
