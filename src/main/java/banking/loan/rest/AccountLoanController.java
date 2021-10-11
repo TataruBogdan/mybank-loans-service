@@ -4,6 +4,7 @@ package banking.loan.rest;
 import banking.commons.dto.IndividualDTO;
 import banking.commons.dto.AccountLoanDTO;
 import banking.loan.dto.ArgsDTO;
+import banking.loan.rest.client.IndividualRestClient;
 import banking.loan.service.AccountLoanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

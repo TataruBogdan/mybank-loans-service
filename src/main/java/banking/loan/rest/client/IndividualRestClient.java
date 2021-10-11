@@ -1,4 +1,4 @@
-package banking.loan.rest;
+package banking.loan.rest.client;
 
 import banking.commons.dto.IndividualDTO;
 import org.springframework.beans.factory.annotation.Autowired;
