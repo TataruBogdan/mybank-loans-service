@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+//@EnableAutoConfiguration
 public class LoanApplication implements CommandLineRunner {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());

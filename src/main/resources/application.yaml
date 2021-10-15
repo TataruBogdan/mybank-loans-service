@@ -8,6 +8,8 @@ logging:
 spring:
   devtools:
     add-properties: true
+  application:
+    name: mybank-loans-service
   datasource:
     url: jdbc:postgresql://localhost:5432/loans
     username: admin
